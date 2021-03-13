@@ -1,0 +1,67 @@
+<div class="main-div">
+    <h1>BLOCKCHAIN</h1>
+
+    <div class="block" *ngFor="let bl of blockchain; index as i;">
+        <div *ngIf="i>0">
+            <i class="down-icon" nz-icon nzType="down" nzTheme="outline"></i>
+        </div>
+
+        <nz-card class="block-card" [nzHoverable]="true">
+            <div>
+                <nz-input-group [nzPrefix]="prefixTemplateUser" nzAddOnBefore="DATA" class="input-group-style">
+                <input type="text" style="white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);" nz-input [(ngModel)]="bl.data" (keyup)="onKey(i, $event)"/>
+                </nz-input-group>
+                <ng-template #prefixTemplateUser>
+                    <i nz-icon nzType="file-text" nzTheme="outline"></i>
+                </ng-template>
+            </div>
+
+            <div>
+                <div class="previous-hash-div">
+                    <div style="white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);">PREVIOUS HASH</div>
+                    <nz-tag class="previous-hash-tag" nzColor={{bl.colorPre_hash}} >{{bl.previousHash}}</nz-tag>
+                </div>
+            </div>
+
+            <div>
+                <div class="hash-div">
+                    <div style="margin-right: 15px; white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);">HASH</div>
+                    <nz-tag class="hash-tag-div" nzColor={{bl.color_hash}}>{{bl.hash}}</nz-tag>
+                </div>
+            </div>
+
+            <div class="block-main">
+                <div class="time-div">
+                    <span style="letter-spacing: 1px; line-height: 1.5; color: rgba(0,0,0,.65);" *ngIf="i==0">GENESIS BLOCK</span>
+                    <span style="letter-spacing: 1px; line-height: 1.5; color: rgba(0,0,0,.65);" *ngIf="i>0">BLOCK #{{ i }}</span>
+                    <span class="time-style"> on {{bl.timestamp | date: 'EEE, dd LLL YYYY hh:mm:ss z'}}</span>
+                </div>
+                <div *ngIf="!bl.hash_changed">
+                    <nz-tag style="cursor: default; white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);" nzColor="default">{{bl.nonce}}</nz-tag>
+                </div>
+
+                <button *ngIf="bl.hash_changed" nz-button nzType="primary" (click)="save_changes(i, bl)" class="replace_btnStyle" [nzSize]="size" nzShape="circle">
+                    <i nz-icon nzType="tool" nzTheme="outline"></i>
+                </button>
+            </div>
+        </nz-card>
+    </div>
+
+    <div class="mine">
+        <nz-card class="mine-card" [nzHoverable]="true">
+            <div>
+                <nz-input-group [nzPrefix]="prefixTemplateUser" nzAddOnBefore="DATA" class="input-group-style">
+                <input type="text" nz-input [(ngModel)]="mine_msg"/>
+                </nz-input-group>
+                <ng-template #prefixTemplateUser>
+                    <i nz-icon nzType="file-text" nzTheme="outline"></i>
+                </ng-template>
+            </div>
+
+            <button class="mine-button" 
+                nz-button nzType="primary" nzShape="round" (click)="mine(mine_msg)">
+                <span style="font-size: large;">+&nbsp;</span>ADD NEW BLOCK
+            </button>
+        </nz-card>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div style="padding-bottom: 300px;">
+  <nz-spin style="margin: auto; text-align: center;" [nzSize]="'large'" *ngIf="isLoading" nzSimple></nz-spin>
+
+  <form style="margin: auto;" nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="onSignup()" *ngIf="!isLoading">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your email!">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="email" nz-input formControlName="email" placeholder="E-mail"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input formControlName="password" placeholder="Password"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+   
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" *ngIf="!isLoading">Signup</button>
+    <a [routerLink]="['/auth/login']">Back to log in!</a>
+  </form>
+</div>
