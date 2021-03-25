@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.blockchainService.logout.next(true);
 
     this.validateForm = this.fb.group({
-      email: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]]
     });
 

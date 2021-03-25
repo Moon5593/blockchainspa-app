@@ -165,3 +165,8 @@ p{
     color: white; 
     border: transparent;
 }
+
+nz-input-group{
+    outline:none !important;
+    box-shadow: none;
+}

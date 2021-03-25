@@ -9,7 +9,7 @@
         <nz-card class="block-card" [nzHoverable]="true">
             <div>
                 <nz-input-group [nzPrefix]="prefixTemplateUser" nzAddOnBefore="DATA" class="input-group-style">
-                <input type="text" style="white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);" nz-input [(ngModel)]="bl.data" (keyup)="onKey(i, $event)"/>
+                <input type="text" style="white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);" nz-input [(ngModel)]="bl.data" [nzBorderless]="true" (keyup)="onKey(i, $event)"/>
                 </nz-input-group>
                 <ng-template #prefixTemplateUser>
                     <i nz-icon nzType="file-text" nzTheme="outline"></i>
