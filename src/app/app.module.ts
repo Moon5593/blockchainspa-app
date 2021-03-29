@@ -26,11 +26,11 @@ import { AuthModule } from './auth/auth.module';
 import { ErrorInterceptor } from './error-interceptor';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { IconDefinition } from '@ant-design/icons-angular';
-import { FileTextOutline, ToolOutline, ShareAltOutline, MailOutline, GooglePlusOutline, FacebookFill, LinkedinFill, TwitterOutline, HeartOutline, MediumSquareFill, GithubOutline } from '@ant-design/icons-angular/icons';
+import { FileTextOutline, ToolOutline, ShareAltOutline, MailOutline, GooglePlusOutline, FacebookFill, LinkedinFill, TwitterOutline, HeartOutline, MediumSquareFill, GithubOutline, RocketOutline, ArrowLeftOutline } from '@ant-design/icons-angular/icons';
 
 registerLocaleData(en);
 
-const icons: IconDefinition[] = [ FileTextOutline, ToolOutline, ShareAltOutline, MailOutline, GooglePlusOutline, FacebookFill, LinkedinFill, TwitterOutline, HeartOutline, MediumSquareFill, GithubOutline ];
+const icons: IconDefinition[] = [ FileTextOutline, ToolOutline, ShareAltOutline, MailOutline, GooglePlusOutline, FacebookFill, LinkedinFill, TwitterOutline, HeartOutline, MediumSquareFill, GithubOutline, RocketOutline, ArrowLeftOutline ];
 
 @NgModule({
   declarations: [

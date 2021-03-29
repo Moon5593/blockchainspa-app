@@ -9,7 +9,7 @@
         <nz-card class="block-card" [nzHoverable]="true">
             <div>
                 <nz-input-group [nzPrefix]="prefixTemplateUser" nzAddOnBefore="DATA" class="input-group-style">
-                <input type="text" style="white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);" nz-input [(ngModel)]="bl.data" [nzBorderless]="true" (keyup)="onKey(i, $event)"/>
+                  <input type="text" style="white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);" nz-input [(ngModel)]="bl.data" [nzBorderless]="true" (keyup)="onKey(i, $event)"/>
                 </nz-input-group>
                 <ng-template #prefixTemplateUser>
                     <i nz-icon nzType="file-text" nzTheme="outline"></i>
@@ -40,7 +40,7 @@
                     <nz-tag style="cursor: default; white-space: nowrap; line-height: 1.5; font-size: 12px; color: rgba(0,0,0,.65);" nzColor="default">{{bl.nonce}}</nz-tag>
                 </div>
 
-                <button *ngIf="bl.hash_changed" nz-button nzType="primary" (click)="save_changes(i, bl)" class="replace_btnStyle" [nzSize]="size" nzShape="circle">
+                <button *ngIf="bl.hash_changed" nz-button nzType="primary" (click)="save_changes(i, bl)" class="replace_btnStyle" nzShape="circle">
                     <i nz-icon nzType="tool" nzTheme="outline"></i>
                 </button>
             </div>
@@ -58,10 +58,31 @@
                 </ng-template>
             </div>
 
-            <button class="mine-button" 
-                nz-button nzType="primary" nzShape="round" (click)="mine(mine_msg)">
-                <span style="font-size: large;">+&nbsp;</span>ADD NEW BLOCK
+            <button class="mine-button"
+                nz-button nzType="primary" (click)="mine(mine_msg)">
+                <span style="font-size: large; margin: auto; text-align: center; padding: 5px;">+ </span>ADD NEW BLOCK
             </button>
         </nz-card>
     </div>
+</div>
+
+
+<div style="display: flex; justify-content: center; padding-bottom: 50px; padding-left: 20px;">
+  <nz-button-group style="margin-right: 33px;">
+      <button class="share_button" nz-button nzType="primary" disabled><i nz-icon nzType="share-alt" nzTheme="outline"></i>SHARE</button>
+      <a routerLink="/" nz-button nzType="link" class="common_button"><i style="text-align: center;" nz-icon nzType="mail" nzTheme="outline"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i nz-icon nzType="google-plus" nzTheme="outline"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i style="text-align: center;" nz-icon nzType="facebook" nzTheme="fill"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i style="text-align: center;" nz-icon nzType="linkedin" nzTheme="fill"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i style="text-align: center;" nz-icon nzType="twitter" nzTheme="outline"></i></a>
+  </nz-button-group>
+
+  <nz-button-group>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i style="text-align: center;" nz-icon nzType="twitter" nzTheme="outline"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i style="text-align: center;" nz-icon nzType="linkedin" nzTheme="fill"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i nz-icon nzType="medium-square" nzTheme="fill"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i style="text-align: center;" nz-icon nzType="github" nzTheme="outline"></i></a>
+      <a routerLink="/" nz-button nzType="link" class="common_button" ><i style="text-align: center;" nz-icon nzType="mail" nzTheme="outline"></i></a>
+      <button class="share_button" nz-button nzType="primary" disabled><i nz-icon nzType="heart" nzTheme="outline"></i>CONNECT</button>
+  </nz-button-group>
 </div>

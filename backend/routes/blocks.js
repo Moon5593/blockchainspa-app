@@ -12,7 +12,9 @@ router.put("/:id", checkAuth, BlockController.replaceBlock);
 
 router.put("/nextPrev/:id", checkAuth, BlockController.replaceNextHash);
 
-router.get("/block", BlockController.getBlock);
+router.get("/block", checkAuth, BlockController.getBlock);
+
+router.get("/block_range", checkAuth, BlockController.getBlockRange);
 
 router.get("/:id", BlockController.getBlocks);
 

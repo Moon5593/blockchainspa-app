@@ -1,6 +1,6 @@
 <div style="padding-bottom: 300px;">
   <nz-spin style="margin: auto; text-align: center;" [nzSize]="'large'" *ngIf="isLoading" nzSimple></nz-spin>
-
+  <h1 style="margin: auto; text-align: center; padding-bottom: 20px;">SIGNUP</h1>
   <form style="margin: auto;" nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="onSignup()" *ngIf="!isLoading">
     <nz-form-item>
       <nz-form-control nzErrorTip="Please input your email!">
@@ -16,8 +16,8 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
-   
+
     <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" *ngIf="!isLoading">Signup</button>
-    <a [routerLink]="['/auth/login']">Back to log in!</a>
+    <a [routerLink]="['/auth/login']"><i nz-icon nzType="arrow-left" nzTheme="outline"></i> Back to log in!</a>
   </form>
 </div>

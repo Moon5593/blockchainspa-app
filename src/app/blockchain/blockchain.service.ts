@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
@@ -48,8 +48,31 @@ export class BlockchainService {
       });
   }
 
+  getBlocksFromStartToEnd(start, end){
+    let searchParams = new HttpParams();
+    searchParams = searchParams.append('start', start);
+    searchParams = searchParams.append('end', end);
+    return this.http.get<{block: any;}>(BACKEND_URL + "block_range",
+    {
+      params: searchParams
+    }).pipe(map(res=>{
+      return res.block.map(block=>{
+        return {
+          id: block._id,
+          timestamp: block.timestamp,
+          creator: block.creator,
+          data: block.data,
+          hash: block.hash,
+          nonce: block.nonce,
+          index: +block.index,
+          previousHash: res.block.previousHash
+        };
+      })
+    }));
+  }
+
   getLatestBlock() {
-    return this.http.get<{block: any;}>(BACKEND_URL + "/block");
+    return this.http.get<{block: any;}>(BACKEND_URL + "block");
   }
 
   addBlock(index: number, previousHash: string, timestamp: number, data: string, hash: string, nonce: number) {

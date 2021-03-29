@@ -3,11 +3,11 @@
     color: rgba(0,0,0,.85);
     font-weight: 500;
 
-    text-align: center; 
-    font-size: 40pt; 
-    margin-bottom: 33px; 
-    letter-spacing: 3px; 
-    position: relative; 
+    text-align: center;
+    font-size: 40pt;
+    margin-bottom: 33px;
+    letter-spacing: 3px;
+    position: relative;
     z-index: 999;
 
     font-family: DINPro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
@@ -23,130 +23,139 @@ p{
 }
 
 .mine-button{
-    margin-bottom: 10px; 
-    border-radius: 6.25em; 
+    margin-bottom: 10px;
+    border-radius: 6.25em;
     padding: 10px 15px;
     height: auto;
     background: -webkit-linear-gradient(45deg,#d4145a,#fbb03b);
     background: -o-linear-gradient(45deg,#d4145a,#fbb03b);
     background: linear-gradient(45deg,#d4145a,#fbb03b);
-    margin-left: 65px;
+    margin-left: 55px;
     margin-top: 10px;
     border: none;
     color: #fff;
+    animation: pulsate 1.5s ease-out infinite;
+}
+
+@keyframes pulsate{
+  0% {box-shadow: 0 0 0 0 rgb(136 10 56 / 50%);}
+  70% {box-shadow: 0 0 0 5px rgb(136 10 56 / 0%);}
+  100% {box-shadow: 0 0 0 0 rgb(136 10 56 / 0%);}
 }
 
 .input-group-style{
-    margin-bottom: 20px; 
-    margin-top: 15px; 
-    padding-left: 10px; 
-    padding-right: 10px; 
+    margin-bottom: 20px;
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     z-index: 100;
 }
 
 .main-div{
-    overflow-y:auto; 
-    flex-shrink: 0; 
-    opacity: 1; 
-    transition: none!important; 
-    display: block; 
-    line-height: 1.5; 
-    color: rgba(0,0,0,.65); 
+    overflow-y:auto;
+    flex-shrink: 0;
+    opacity: 1;
+    transition: none!important;
+    display: block;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
     list-style: none;
 }
 
 .block-card{
-    margin: auto; 
-    cursor: default; 
-    margin-bottom: 27px; 
+    margin: auto;
+    cursor: default;
+    margin-bottom: 27px;
     border-radius: 10px;
-    max-width: fit-content; 
-    display: flex; 
-    flex-wrap: nowrap; 
+    max-width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
 }
 
 .mine-card{
-    margin-bottom: 27px; 
-    cursor:default; 
-    box-sizing: border-box; 
-    display: block; 
-    color: rgba(0,0,0,.65);
-    zoom: 1; 
-    border-radius: 10px;
+  cursor:default;
+  box-sizing: border-box;
+  display: block;
+  color: rgba(0,0,0,.65);
+  zoom: 1;
+  border-radius: 10px;
+}
+
+.mine:hover{
+  box-shadow: 0 15px 15px -2px rgba(104, 109, 124, 0.4)!important;
 }
 
 .mine{
-    margin: 60px auto 100px; 
-    border-radius: 10px; 
-    padding-top: 0; 
-    padding-left: 8px; 
-    padding-right: 8px; 
-    overflow: auto; 
+    margin: 60px auto 100px;
+    border-radius: 10px;
+    padding-top: 0;
+    overflow: auto;
     max-width: fit-content;
+    box-shadow: 0 5px 15px -2px rgba(10,16,34,.4)!important;
 }
 
 .previous-hash-div{
-    margin-bottom: 7px; 
-    display: flex; 
-    justify-content: flex-start; 
-    flex-wrap: nowrap; 
-    max-width: 100%; 
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    max-width: 100%;
     overflow: auto;
 }
 
 .previous-hash-tag{
-    font-size: 8pt; 
-    float: right; 
-    font-family: 'Courier New'; 
-    cursor: default; 
-    display: block; 
-    background: none; 
+    font-size: 8pt;
+    float: right;
+    font-family: 'Courier New';
+    cursor: default;
+    display: block;
+    background: none;
     border-color: transparent;
 }
 
 .hash-div{
-    display: flex; 
-    justify-content: flex-start; 
-    flex-wrap: nowrap; 
-    max-width: 100%; 
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    max-width: 100%;
     overflow: auto;
 }
 
 .hash-tag-div{
-    display: block; 
-    font-size: 9pt; 
-    font-family: 'Courier New'; 
-    cursor: default; 
-    max-width: 100%; 
+    display: block;
+    font-size: 9pt;
+    font-family: 'Courier New';
+    cursor: default;
+    max-width: 100%;
     overflow: auto;
 }
 
 .block-main{
-    margin-top: 27px; 
-    display: flex; 
+    margin-top: 27px;
+    display: flex;
     justify-content: space-between;
-    align-items: center; 
-    flex-wrap: nowrap; 
+    align-items: center;
+    flex-wrap: nowrap;
     text-overflow: ellipsis;
 }
 
 .time-div{
-    font-size: 24px; 
-    white-space: nowrap; 
+    font-size: 24px;
+    white-space: nowrap;
     overflow: auto;
 }
 
 .time-style{
-    font-weight: 300; 
+    font-weight: 300;
     font-size: 8pt;
-    line-height: 1.5; 
+    line-height: 1.5;
     color: rgba(0,0,0,.65);
 }
 
 .down-icon{
-    display: block; 
-    font-size: 24pt; 
+    display: block;
+    font-size: 24pt;
     margin-bottom: 27px;
 }
 
@@ -160,13 +169,32 @@ p{
     display: inline-block;
     text-align: center;
     cursor: pointer;
-    background: linear-gradient(45deg, rgb(0, 198, 255), rgb(0, 114, 255)); 
-    box-shadow: rgba(50, 50, 93, 0.1) 0px 7px 14px, rgba(0, 0, 0, 0.08) 0px 3px 6px; 
-    color: white; 
+    background: linear-gradient(45deg, rgb(0, 198, 255), rgb(0, 114, 255));
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 7px 14px, rgba(0, 0, 0, 0.08) 0px 3px 6px;
+    color: white;
     border: transparent;
 }
 
 nz-input-group{
     outline:none !important;
     box-shadow: none;
+}
+
+.share_button{
+  color: black; border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.15;
+  padding: 0 15px;
+  margin: 0;
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  border-radius: 0px;
+  height: 32px;
+}
+
+.common_button{
+  color: #fff;
+  background-color: #1890ff;
+  cursor: pointer;
+  margin: 0;
 }

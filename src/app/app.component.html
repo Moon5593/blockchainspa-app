@@ -1,29 +1,12 @@
-<div style="margin-bottom: 100px; position: relative;">
+<div style="margin-bottom: 100px; margin-top:50px; position: relative;">
     <img style="width: 60px; margin-right: auto; margin-left: auto; display: block;" alt="logo.png" src="assets/logo.png">
-    <a *ngIf="!isLoginPage" style="margin-top: -50px; float:right; padding-right: 50px;" [routerLink]="['/auth/logout']" (click)="onLogout()">Logout</a>
+    <div class="l_main_button">
+      <button class="l_button" *ngIf="!isLoginPage" [routerLink]="['/auth/logout']" (click)="onLogout()"><i nz-icon nzType="rocket" nzTheme="outline"></i> Logout</button>
+      <button class="l_button" *ngIf="isLoginPage && userIsAuthenticated" [routerLink]="['/']"><i nz-icon nzType="arrow-left" nzTheme="outline"></i> Back to App</button>
+    </div>
 </div>
 <!--<app-blockchain-list></app-blockchain-list>-->
 
 <app-error *ngIf="hasError" [data]="message"></app-error>
 
 <router-outlet></router-outlet>
-
-<div style="display: flex; justify-content: center; padding-bottom: 50px; padding-left: 20px;">
-    <nz-button-group style="margin-right: 33px;">
-        <button class="share_button" nz-button nzType="primary" disabled><i nz-icon nzType="share-alt" nzTheme="outline"></i>SHARE</button>
-        <a href="#" target="_blank" nz-button nzType="link" class="common_button"><i style="text-align: center;" nz-icon nzType="mail" nzTheme="outline"></i></a>    
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i nz-icon nzType="google-plus" nzTheme="outline"></i></a>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i style="text-align: center;" nz-icon nzType="facebook" nzTheme="fill"></i></a>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i style="text-align: center;" nz-icon nzType="linkedin" nzTheme="fill"></i></a>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i style="text-align: center;" nz-icon nzType="twitter" nzTheme="outline"></i></a>
-    </nz-button-group>
-
-    <nz-button-group>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i style="text-align: center;" nz-icon nzType="twitter" nzTheme="outline"></i></a>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i style="text-align: center;" nz-icon nzType="linkedin" nzTheme="fill"></i></a>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i nz-icon nzType="medium-square" nzTheme="fill"></i></a>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i style="text-align: center;" nz-icon nzType="github" nzTheme="outline"></i></a>
-        <a href="#" nz-button nzType="link" class="common_button" target="_blank"><i style="text-align: center;" nz-icon nzType="mail" nzTheme="outline"></i></a>
-        <button class="share_button" nz-button nzType="primary" disabled><i nz-icon nzType="heart" nzTheme="outline"></i>CONNECT</button>
-    </nz-button-group>
-</div>

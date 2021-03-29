@@ -39,6 +39,7 @@ exports.replaceBlock = (req, res, next) => {
     nonce: req.body.nonce,
     creator: req.userData.userId
   });
+  console.log(r_block);
   Block
     .updateOne({ _id: req.params.id, creator: req.userData.userId }, r_block)
     .then(createdBlock => {
@@ -101,12 +102,40 @@ exports.getBlocks = (req, res, next) => {
 };
 
 exports.getBlock = (req, res, next) => {
-  Block.findOne().sort({index:-1})
+  Block.findOne({creator: req.userData.userId}).sort({index:-1})
     .then(block => {
       if (block) {
         res.status(200).json({
           message: "Block fetched",
           block: block
+        });
+      } else {
+        res.status(404).json({ message: "Block not found!" });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: "Fetching block failed!"
+      });
+    });
+};
+
+exports.getBlockRange = (req, res, next) => {
+  var start = req.param('start');
+  var end= req.param('end');
+
+  Block.find({creator: req.userData.userId})
+    .then(block => {
+      if (block) {
+        let mod_block = [];
+        //console.log(start, end);
+        for(let i=start; i<=end; i++){
+          mod_block.push(block[i]);
+        }
+        console.log(mod_block);
+        res.status(200).json({
+          message: "Block fetched",
+          block: mod_block
         });
       } else {
         res.status(404).json({ message: "Block not found!" });

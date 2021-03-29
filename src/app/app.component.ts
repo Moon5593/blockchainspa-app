@@ -16,11 +16,13 @@ export class AppComponent implements OnInit, OnDestroy{
   hasError = false;
   private errorSub: Subscription;
   message: string;
+  userIsAuthenticated = false;
 
   constructor(private bService: BlockchainService, private authService: AuthService, private errorService: ErrorService){}
 
   ngOnInit(){
     this.authService.autoAuthUser();
+    this.userIsAuthenticated = this.authService.getIsAuth();
     this.bService.logout.subscribe(response=>{
       setTimeout(() => {
         this.isLoginPage = response;
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit, OnDestroy{
   onLogout() {
     this.isLoginPage = true;
     this.authService.logout();
+    this.userIsAuthenticated = this.authService.getIsAuth();
   }
 
   ngOnDestroy(){
