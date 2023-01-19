@@ -1,7 +1,6 @@
 # BlockchainSPAApp
 This is a full MEAN stack application. This app calculates hash's by taking some input from user. When data of one of the block changes, the reflection is seen in the user interface. When the data change's the tool button (blue icon) is given so as to save the changes. The changes are first calculated and then reflected in the backend. The input providing is not mandatory as empty string's hash is also calculated and it is valid as per the way how SHA crypto hashing works.
 Register first and then login to see the core Blockchain application.
-Application is deployed on Amazon Elastic Beanstalk, link - http://blockchainspathree-env.eba-gyufdegd.us-east-2.elasticbeanstalk.com/
 
 ## Frontend (Angular)
 The frontend has 3 components namely login, signup and blockchain-list. The login and signup is both looks identical. This application uses Ant Design which is a library like bootstrap, angular material to style the application. The reason to use the Ant Design was since this app had to be clone of blockchaindemo.io which also uses Ant Design. The official link to this librabry is https://ng.ant.design/docs/introduce/en.
